@@ -33,11 +33,17 @@ var publicHandler = (request, response) => {
 var inputHandler = (request, response) => {
     const url = request.url;
     var url_parts = urlMod.parse(request.url, true);
-    var search = url_parts.search; //querystring fetch request localhost:/8080/autocomplete?search=gfeigiw
-    var autocomplete = dictionary.keywords.map(element => {
+    var search = url_parts.search.split('=')[1]; //querystring fetch request localhost:/8080/autocomplete?search=gfeigiw
+    var autocomplete = [];
+
+    dictionary.keywords.forEach(element => {
         if (element.includes(search) && element.indexOf(search.substring(0, 1)) === 0)
-            return element;
+            autocomplete.push(element);
     });
+
+    if (search === "") {
+        autocomplete = [];
+    }
 
     try {
         response.writeHead(200, { 'Content-Type': extensionType.json });
