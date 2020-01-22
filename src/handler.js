@@ -37,7 +37,9 @@ var inputHandler = (request, response) => {
     var autocomplete = [];
 
     dictionary.keywords.forEach(element => {
-        if (element.toLowerCase().includes(search) && element.toLowerCase().indexOf(search.substring(0, 1)) === 0)
+        if (element.toLowerCase().includes(search) &&
+            element.toLowerCase().indexOf(search.substring(0, 1)) === 0 &&
+            autocomplete.length <= 10)
             autocomplete.push(element);
     });
 
