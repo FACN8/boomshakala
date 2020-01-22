@@ -1,26 +1,27 @@
 {
-  "name": "boomshakala",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FACN8/boomshakala.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FACN8/boomshakala/issues"
-  },
-  "homepage": "https://github.com/FACN8/boomshakala#readme",
-  "devDependencies": {
-    "jest": "^24.9.0"
-  },
-  "dependencies": {
-    "nodemon": "^2.0.2"
-  }
+    "name": "boomshakala",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/FACN8/boomshakala.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/FACN8/boomshakala/issues"
+    },
+    "homepage": "https://github.com/FACN8/boomshakala#readme",
+    "devDependencies": {
+        "jest": "^24.9.0"
+    },
+    "dependencies": {
+        "nodemon": "^2.0.2"
+    }
 }
