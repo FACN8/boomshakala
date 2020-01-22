@@ -3,13 +3,13 @@ const ul = document.getElementById('ul');
 
 function fetchData(url, callback) {
     fetch(url)
-        .then(function(response) {
+        .then(function (response) {
             return response.json();
         })
-        .then(function(data) {
+        .then(function (data) {
             callback(data);
         })
-        .catch(function() {
+        .catch(function () {
             callback(null);
         })
 };
@@ -26,6 +26,9 @@ function searchAnimals(search) {
             var span = document.createElement('span');
             span.textContent = element;
             item.appendChild(span);
+            item.addEventListener('click', () => {
+                window.location.href = "http://wikipedia.org/wiki/" + element.replace(' ', '_');
+            });
             ul.appendChild(item);
         })
         if (ul.firstChild) {
