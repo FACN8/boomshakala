@@ -19,5 +19,8 @@
   "homepage": "https://github.com/FACN8/boomshakala#readme",
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.2"
   }
 }
