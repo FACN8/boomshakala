@@ -1,22 +1,9 @@
-[{
-        "name": "Meowsy",
-        "species": "cat",
-        "foods": "catNip"
-    },
-    {
-        "name": "Barky",
-        "species": "dog",
-        "foods": {
-            "likes": ["bones", "carrots"],
-            "dislikes": ["tuna"]
-        }
-    },
-    {
-        "name": "Purrpaws",
-        "species": "cat",
-        "foods": {
-            "likes": ["mice"],
-            "dislikes": ["cookies"]
-        }
-    }
-]
+{
+    "keywords": [
+        "batman",
+        "spiderman",
+        "yoloman",
+        "edgelord",
+        "batwoman"
+    ]
+}
