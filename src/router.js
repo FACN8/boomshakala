@@ -5,7 +5,7 @@ var router = (request, response) => {
 
     if (url === '/') {
         handler.homePageHandler(request, response);
-    } else if (url.includes('/input/')) {
+    } else if (url.includes('?search=')) {
         handler.inputHandler(request, response);
     } else if (url.includes('/public/')) {
         handler.publicHandler(request, response);
