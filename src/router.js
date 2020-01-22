@@ -7,8 +7,6 @@ var router = (request, response) => {
         handler.homePageHandler(request, response);
     } else if (url.includes('/public/')) {
         handler.publicHandler(request, response);
-    } else if (url.includes('/res/')) {
-        handler.resHandler(request, response);
     } else {
         response.writeHead(404, { 'Content-Type': 'text/html' });
         response.end('404 Content not found');

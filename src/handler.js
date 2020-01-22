@@ -28,9 +28,9 @@ var publicHandler = (request, response) => {
     });
 }
 
-var resHandler = (request, response) => { }
+var inputHandler = (request, response) => {
 
-var inputHandler = (request, response) => { }
+}
 
 var homePageHandler = (request, response) => {
     var url = path.join(__dirname, '..', 'public', 'index.html');
