@@ -30,6 +30,7 @@ var publicHandler = (request, response) => {
   });
 };
 
+
 var resHandler = (request, response) => {
   //handle images
   //handle input/json
