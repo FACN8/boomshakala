@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const querystring = require("querystring");
-const dictionary = require("../res/dictioary.json");
+const dictionary = require("./dictionary.json");
 const urlMod = require("url");
 
 const extensionType = {
@@ -28,12 +28,6 @@ var publicHandler = (request, response) => {
     response.writeHead(200, { "Content-Type": extensionType[extension] });
     response.end(file);
   });
-};
-
-
-var resHandler = (request, response) => {
-  //handle images
-  //handle input/json
 };
 
 var inputHandler = (request, response) => {
@@ -64,7 +58,6 @@ var homePageHandler = (request, response) => {
 
 module.exports = {
   publicHandler,
-  resHandler,
   inputHandler,
   homePageHandler
 };
