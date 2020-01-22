@@ -3,7 +3,7 @@
 }
 
 body {
-    padding: 0.4em;
+    padding-left: 22%;
     margin: 0;
     width: 98vw;
     font-weight: bold;
@@ -27,13 +27,32 @@ body {
     border-top-right-radius: 30px;
 }
 
+#ul {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
+    background-color: white;
+}
+
+.li-suggestion {
+    list-style: none;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+
+.li-suggestion:hover {
+    background-color: rgb(228, 228, 228);
+}
+
 input {
     border: 1px solid transparent;
     background-color: black;
-    padding: 10px;
+    padding: 15px 30px;
     font-size: 16px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
@@ -41,23 +60,27 @@ input {
 input[type=text] {
     background-color: whitesmoke;
     width: 100%;
+    outline: none;
 }
 
 #id {
     color: white;
 }
 
-.main-container {
-    margin-top: 30%;
+#main-container {
+    /* margin-top: 30%; */
+    max-width: 700px;
     width: 95%;
     padding: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
-.main-container i {
-    color: red;
-    position: relative;
-    width: 50px;
-    margin-left: 1200px;
-    font-size: 30px;
-    top: 35px;
+.round-corners {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }

@@ -1,6 +1,6 @@
 const search = document.getElementById('input');
-const matchList = document.getElementById('match-list');
 const ul = document.getElementById('ul');
+const liList = document.querySelectorAll('.li-suggestion');
 
 function fetchData(url, callback) {
     fetch(url)
@@ -16,14 +16,14 @@ function fetchData(url, callback) {
 };
 
 function searchAnimals(search) {
-    const url = "http://localhost:8080/?search=" + search;
+    const url = "http://localhost:8000/?search=" + search;
     fetchData(url, (data) => {
         while (ul.firstChild) {
             ul.removeChild(ul.firstChild)
         }
-        console.log(data);
         data.forEach(element => {
             var item = document.createElement('li');
+            item.className = 'li-suggestion round-corners';
             var span = document.createElement('span');
             span.textContent = element
             item.appendChild(span)
@@ -31,4 +31,5 @@ function searchAnimals(search) {
         })
     });
 }
+
 search.addEventListener('input', () => searchAnimals(search.value));
