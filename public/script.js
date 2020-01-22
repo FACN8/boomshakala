@@ -16,7 +16,7 @@ function fetchData(url, callback) {
 };
 
 function searchAnimals(search) {
-    const url = "http://localhost:8000/?search=" + search;
+    const url = "/?search=" + search;
     fetchData(url, (data) => {
         while (ul.firstChild) {
             ul.removeChild(ul.firstChild)
