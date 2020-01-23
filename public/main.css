@@ -38,7 +38,7 @@ body::after {
     background-size: 100% 200%;
     display: flex;
     justify-content: space-around;
-    border-radius: 25px 25px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
 }
 
 #ul {
@@ -60,7 +60,7 @@ input {
     background-color: black;
     padding: 15px 30px;
     font-size: 16px;
-    border-radius: 25px 25px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
 }
 
 input[type=text] {
@@ -78,9 +78,9 @@ input[type=text] {
     width: 95%;
     padding: 0;
     border: solid rgb(187, 187, 187) 1px;
-    border-radius: 23px 23px 23px 23px;
+    border-radius: 30px 30px 30px 30px;
 }
 
 .round-corners {
-    border-radius: 23px 23px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
 }

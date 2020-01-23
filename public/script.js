@@ -44,9 +44,9 @@ function searchAnimals(search) {
             ul.appendChild(a);
         })
         if (ul.firstChild) {
-            document.querySelector('input').style.borderRadius = '25px 25px 0 0';
+            document.querySelector('input').style.borderRadius = '30px 30px 0 0';
         } else {
-            document.querySelector('input').style.borderRadius = '25px 25px 25px 25px';
+            document.querySelector('input').style.borderRadius = '30px 30px 30px 30px';
         }
         ul.childNodes[currentSelected].firstChild.style.background = 'rgb(228, 228, 228)';
     });
