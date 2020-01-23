@@ -1,6 +1,5 @@
 const fs = require("fs");
 const path = require("path");
-const querystring = require("querystring");
 const dictionary = require("./dictionary.json");
 const urlMod = require("url");
 
