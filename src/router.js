@@ -1,7 +1,7 @@
 const handler = require('./handler.js');
 
-var router = (request, response) => {
-    var url = request.url;
+let router = (request, response) => {
+    const url = request.url;
 
     if (url === '/') {
         handler.homePageHandler(request, response);
