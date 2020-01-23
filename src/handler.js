@@ -14,7 +14,8 @@ const extensionType = {
     json: "application/json"
 };
 
-var publicHandler = (request, response) => {
+//Handles requests for the public directory e.g. images/css/js files
+const publicHandler = (request, response) => {
     const url = path.join(__dirname, "..", request.url);
     const extension = url.split(".")[1];
 
@@ -30,21 +31,34 @@ var publicHandler = (request, response) => {
     });
 };
 
-var inputHandler = (request, response) => {
+//Handles user requests for autocompleting search queries
+const inputHandler = (request, response) => {
     const url = request.url;
-    var url_parts = urlMod.parse(request.url, true);
-    var search = url_parts.search.split('=')[1].toLowerCase(); //querystring fetch request localhost:/8080/autocomplete?search=gfeigiw
-    var autocomplete = [];
+    const url_parts = urlMod.parse(request.url, true);
+    const search = url_parts.query.search.toLowerCase();
+    let autocomplete = [];
 
+    //Populating autocomplete list according to search term
     dictionary.keywords.forEach(element => {
         if (element.toLowerCase().includes(search) &&
             element.toLowerCase().indexOf(search.substring(0, 1)) === 0 &&
-            autocomplete.length <= 10)
+            autocomplete.length <= 10 &&
+            search !== '')
             autocomplete.push(element);
     });
 
-    if (search === "") {
-        autocomplete = [];
+    //Fills up list if sensitive autocomplete not enough
+    //e.g. Searching 'horse' would return ['Horse', 'Seahorse']
+    let i = 0;
+
+    while (autocomplete.length < 10 &&
+        dictionary.keywords[i] != null &&
+        search !== '') {
+        if (!autocomplete.includes(dictionary.keywords[i]) &&
+            dictionary.keywords[i].includes(search)) {
+            autocomplete.push(dictionary.keywords[i]);
+        }
+        i++;
     }
 
     try {
@@ -57,8 +71,9 @@ var inputHandler = (request, response) => {
     }
 };
 
-var homePageHandler = (request, response) => {
-    var url = path.join(__dirname, "..", "public", "index.html");
+//Default home page when user accesses website
+const homePageHandler = (request, response) => {
+    const url = path.join(__dirname, "..", "public", "index.html");
 
     fs.readFile(url, (error, file) => {
         if (error) {

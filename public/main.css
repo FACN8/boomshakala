@@ -2,9 +2,15 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
 body {
-    padding-left: 22%;
-    margin: 0;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
     width: 98vw;
     font-weight: bold;
 }
@@ -32,17 +38,11 @@ body::after {
     background-size: 100% 200%;
     display: flex;
     justify-content: space-around;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-radius: 25px 25px 30px 30px;
 }
 
 #ul {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 23px;
-    border-bottom-right-radius: 23px;
+    border-radius: 0 0 23px 23px;
     margin: 0;
     padding: 0;
     max-width: 700px;
@@ -55,19 +55,12 @@ body::after {
     cursor: pointer;
 }
 
-.li-suggestion:hover {
-    background-color: rgb(228, 228, 228);
-}
-
 input {
     border: 1px solid transparent;
     background-color: black;
     padding: 15px 30px;
     font-size: 16px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 25px 25px 30px 30px;
 }
 
 input[type=text] {
@@ -85,15 +78,9 @@ input[type=text] {
     width: 95%;
     padding: 0;
     border: solid rgb(187, 187, 187) 1px;
-    border-top-left-radius: 23px;
-    border-top-right-radius: 23px;
-    border-bottom-left-radius: 23px;
-    border-bottom-right-radius: 23px;
+    border-radius: 23px 23px 23px 23px;
 }
 
 .round-corners {
-    border-top-left-radius: 23px;
-    border-top-right-radius: 23px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-radius: 23px 23px 30px 30px;
 }
