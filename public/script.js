@@ -34,7 +34,9 @@ function searchAnimals(search) {
         //Populating <ul> list for autocomplete options
         data.forEach(element => {
             var a = document.createElement('a');
-            a.setAttribute('href', "http://wikipedia.org/wiki/" + element.replace(' ', '_'));
+            var str = element;
+            while (str.includes(' ')) str = str.replace(' ', '_');
+            a.setAttribute('href', "http://wikipedia.org/wiki/" + str);
             var item = document.createElement('li');
             item.className = 'li-suggestion round-corners';
             var span = document.createElement('span');
@@ -45,27 +47,27 @@ function searchAnimals(search) {
         })
         if (ul.firstChild) {
             document.querySelector('input').style.borderRadius = '30px 30px 0 0';
+            ul.childNodes[currentSelected].firstChild.style.background = 'rgb(228, 228, 228)';
         } else {
             document.querySelector('input').style.borderRadius = '30px 30px 30px 30px';
         }
-        ul.childNodes[currentSelected].firstChild.style.background = 'rgb(228, 228, 228)';
     });
 }
 
 search.addEventListener('keyup', (event) => {
     ul.childNodes[currentSelected].firstChild.style.background = 'white';
-    if (event.keyCode === 40) {
+    if (event.keyCode === 40) { // 40 is key code for Arrow Down
         currentSelected++;
         if (currentSelected > itemsLength - 1) {
             currentSelected = 0;
         }
     }
-    else if (event.keyCode === 38) {
+    else if (event.keyCode === 38) { // 38 is key code for Arrow Up
         currentSelected--;
         if (currentSelected < 0) {
             currentSelected = itemsLength - 1;
         }
-    } else if (event.keyCode === 13) {
+    } else if (event.keyCode === 13) { // 13 is key code for Enter
         window.location.href = ul.childNodes[currentSelected];
     }
     ul.childNodes[currentSelected].firstChild.style.background = 'rgb(228, 228, 228)';

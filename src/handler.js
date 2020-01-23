@@ -22,7 +22,7 @@ const publicHandler = (request, response) => {
         if (error) {
             console.log(error);
             response.writeHead(404, { "Content-Type": extensionType.html });
-            response.end("An Error Occured");
+            response.end("404 File in public directory not found");
             return;
         }
         response.writeHead(200, { "Content-Type": extensionType[extension] });
@@ -77,7 +77,7 @@ const homePageHandler = (request, response) => {
     fs.readFile(url, (error, file) => {
         if (error) {
             response.writeHead(404, { "Content-Type": extensionType.html });
-            response.end("404 File not found");
+            response.end("404 Server under maintainance");
             return;
         }
         response.writeHead(200, { "Content-Type": extensionType.html });
